@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('') {
+    stage('error') {
       steps {
-        sh '''cd zkui
+        sh '''cd zkui_master
 mvn clean install 
 ll target/zkui-2.0-SNAPSHOT-jar-with-dependencies.jar'''
       }
