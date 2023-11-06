@@ -3,9 +3,12 @@ pipeline {
   stages {
     stage('error') {
       steps {
-        sh '''cd zkui_master
-mvn clean install 
-ll target/zkui-2.0-SNAPSHOT-jar-with-dependencies.jar'''
+        dir(path: '/var/jenkins_home/workspace/zkui_master') {
+          sh '''mvn clean package install
+ls -lh target/zkui-2.0-SNAPSHOT-jar-with-dependencies.jar
+'''
+        }
+
       }
     }
 
